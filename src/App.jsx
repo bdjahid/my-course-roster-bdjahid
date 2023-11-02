@@ -17,7 +17,6 @@ function App() {
     if (newCredit <= 20) {
       setCreditHr(newCredit)
     }
-    //setCreditHr(newCredit)
   }
 
   return (
