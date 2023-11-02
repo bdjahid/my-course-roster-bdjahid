@@ -9,3 +9,7 @@ Currently, two official plugins are available:
 
 
 # Bullet Points
+
+JavaScript
+react
+useState,useEffect,props drilling
