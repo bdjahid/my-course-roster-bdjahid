@@ -6,7 +6,7 @@ import Header from "./components/header"
 function App() {
   const [courseName, setCourseName] = useState([]);
   const [creditHr, setCreditHr] = useState(0)
-
+  const [remaining, setRemaining] = useState(20)
   const handleCourseAdd = blog => {
     console.log(blog)
     const isExist = courseName.find((item) => item.id == blog.id)
@@ -23,6 +23,8 @@ function App() {
 
   const handleCredit = credit => {
     const newCredit = creditHr + credit;
+    const totalRemaining = remaining - credit;
+    setRemaining(totalRemaining)
     if (newCredit <= 20) {
       setCreditHr(newCredit)
     }
@@ -33,7 +35,7 @@ function App() {
       <Header></Header>
       <div className="md:flex max-w-7xl mx-auto gap-10">
         <Blogs handleCourseAdd={handleCourseAdd} handleCredit={handleCredit}></Blogs>
-        <Course courseName={courseName} creditHr={creditHr}></Course>
+        <Course courseName={courseName} creditHr={creditHr} remaining={remaining}></Course>
       </div>
     </>
   )
