@@ -14,7 +14,10 @@ function App() {
 
   const handleCredit = credit => {
     const newCredit = creditHr + credit;
-    setCreditHr(newCredit)
+    if (newCredit <= 20) {
+      setCreditHr(newCredit)
+    }
+    //setCreditHr(newCredit)
   }
 
   return (

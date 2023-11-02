@@ -2,9 +2,10 @@ import CourseName from "./CourseName/CourseName";
 import PropTypes from 'prop-types';
 
 const Course = ({ courseName, creditHr }) => {
+
     return (
         <div className="md:w-1/4 bg-slate-100 ml-4 rounded">
-            <h1 className="text-2xl p-4">Credit Hour Remaining</h1>
+            <h1 className="text-2xl p-4">Credit Hour Remaining:{creditHr}</h1>
             <p className="px-4"> <hr /></p>
             <h2 className="text-2xl font-bold py-4 pl-4">Course name</h2>
 
