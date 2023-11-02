@@ -12,4 +12,4 @@ Currently, two official plugins are available:
 
 JavaScript
 react
-useState,useEffect,props drilling
+useState,useEffect,props drilling,components,function,event handler etc
