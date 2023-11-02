@@ -6,8 +6,9 @@ import Header from "./components/header"
 function App() {
   const [courseName, setCourseName] = useState([]);
 
-  const handleCourseAdd = (blog) => {
-    console.log('click', blog)
+  const handleCourseAdd = blog => {
+    const newCourseAdd = [...courseName, blog];
+    setCourseName(newCourseAdd)
   }
 
   return (
@@ -15,7 +16,7 @@ function App() {
       <Header></Header>
       <div className="md:flex max-w-7xl mx-auto gap-10">
         <Blogs handleCourseAdd={handleCourseAdd}></Blogs>
-        <Course></Course>
+        <Course courseName={courseName}></Course>
       </div>
     </>
   )

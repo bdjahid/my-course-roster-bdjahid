@@ -20,11 +20,12 @@ const Blog = ({ blog, handleCourseAdd }) => {
                     <span> Credit:{credit}hr</span>
                 </div>
             </div>
-            <button onClick={handleCourseAdd} className="bg-blue-300 w-full py-3 rounded-lg font-bold">Select</button>
+            <button onClick={() => handleCourseAdd(blog)} className="bg-blue-300 w-full py-3 rounded-lg font-bold">Select</button>
         </div>
     );
 };
 Blog.propTypes = {
-    blog: PropTypes.object.isRequired
+    blog: PropTypes.object.isRequired,
+    handleCourseAdd: PropTypes.func
 }
 export default Blog;
