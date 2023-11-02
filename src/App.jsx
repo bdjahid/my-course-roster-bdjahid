@@ -8,8 +8,17 @@ function App() {
   const [creditHr, setCreditHr] = useState(0)
 
   const handleCourseAdd = blog => {
-    const newCourseAdd = [...courseName, blog];
-    setCourseName(newCourseAdd)
+    console.log(blog)
+    const isExist = courseName.find((item) => item.id == blog.id)
+    console.log(isExist)
+    if (isExist) {
+      alert('Have an  already booked')
+    }
+    else {
+      const newCourseAdd = [...courseName, blog];
+      setCourseName(newCourseAdd)
+    }
+
   }
 
   const handleCredit = credit => {

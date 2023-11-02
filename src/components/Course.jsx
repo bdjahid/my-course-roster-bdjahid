@@ -23,7 +23,7 @@ const Course = ({ courseName, creditHr }) => {
     );
 };
 Course.propTypes = {
-    courseName: PropTypes.object,
-    creditHr: PropTypes.object,
+    courseName: PropTypes.array,
+    creditHr: PropTypes.number,
 }
 export default Course;
