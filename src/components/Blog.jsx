@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { BsBook } from "react-icons/Bs";
 import { BiDollar } from "react-icons/Bi";
 
-const Blog = ({ blog, handleCourseAdd }) => {
+const Blog = ({ blog, handleCourseAdd, handleCredit }) => {
     // console.log(blog)
     const { cover, title, description, price, credit } = blog
     return (
@@ -20,12 +20,15 @@ const Blog = ({ blog, handleCourseAdd }) => {
                     <span> Credit:{credit}hr</span>
                 </div>
             </div>
-            <button onClick={() => handleCourseAdd(blog)} className="bg-blue-300 w-full py-3 rounded-lg font-bold">Select</button>
-        </div>
+            <div onClick={() => handleCredit(credit)}>
+                <button onClick={() => handleCourseAdd(blog)} className="bg-blue-300 w-full py-3 rounded-lg font-bold">Select</button>
+            </div>
+        </div >
     );
 };
 Blog.propTypes = {
     blog: PropTypes.object.isRequired,
-    handleCourseAdd: PropTypes.func
+    handleCourseAdd: PropTypes.func,
+    handleCredit: PropTypes.func
 }
 export default Blog;

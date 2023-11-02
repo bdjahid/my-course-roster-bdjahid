@@ -5,18 +5,24 @@ import Header from "./components/header"
 
 function App() {
   const [courseName, setCourseName] = useState([]);
+  const [creditHr, setCreditHr] = useState(0)
 
   const handleCourseAdd = blog => {
     const newCourseAdd = [...courseName, blog];
     setCourseName(newCourseAdd)
   }
 
+  const handleCredit = credit => {
+    const newCredit = creditHr + credit;
+    setCreditHr(newCredit)
+  }
+
   return (
     <>
       <Header></Header>
       <div className="md:flex max-w-7xl mx-auto gap-10">
-        <Blogs handleCourseAdd={handleCourseAdd}></Blogs>
-        <Course courseName={courseName}></Course>
+        <Blogs handleCourseAdd={handleCourseAdd} handleCredit={handleCredit}></Blogs>
+        <Course courseName={courseName} creditHr={creditHr}></Course>
       </div>
     </>
   )

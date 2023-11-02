@@ -3,7 +3,7 @@ import { useState } from "react";
 import Blog from "./Blog";
 import PropTypes from 'prop-types';
 
-const Blogs = ({ handleCourseAdd }) => {
+const Blogs = ({ handleCourseAdd, handleCredit }) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const Blogs = ({ handleCourseAdd }) => {
                         key={blog.id}
                         blog={blog}
                         handleCourseAdd={handleCourseAdd}
+                        handleCredit={handleCredit}
                     ></Blog>)
                 }
             </div>
@@ -29,7 +30,9 @@ const Blogs = ({ handleCourseAdd }) => {
 };
 
 Blogs.propTypes = {
-    handleCourseAdd: PropTypes.func
+    handleCourseAdd: PropTypes.func,
+    handleCredit: PropTypes.func
 }
+
 
 export default Blogs;
